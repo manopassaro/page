@@ -15,10 +15,15 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 25rem;
-    margin: 7rem 22rem 7rem 22rem;
-    padding: 1.5rem;
+    /* height: 25rem; */
+    margin: 10rem 20rem;
+    padding: 2rem;
     border-radius: 8px;
+}
+
+#title{
+    margin-bottom: 0.3rem;
+    cursor: default;
 }
 
 .create{
@@ -26,7 +31,8 @@ body{
     flex-direction: row;
     align-items: center;
     background-color: rgb(91, 91, 91);
-    width: 50rem;
+    /* width: 50rem; */
+    margin-bottom: 17px;
     padding: 8px;
     border-radius: 5px;
 }
@@ -34,11 +40,12 @@ body{
 #input{
     width: 50rem;
     margin-right: 5px;
+
 }
 
 #task{
     background-color:  rgb(218, 218, 218);
-    width: 30rem;
+    /* width: 30rem; */
     padding: 2px;
     border-radius: 4px;
 }
@@ -56,26 +63,30 @@ body{
     cursor: pointer;
 }
 
-.tasks{
+.cards{
     background-color: rgb(91, 91, 91);
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 50rem;
     margin: 7px;
     border-radius: 4px;
 }
 
-.card{
-    margin: 3px;
+.task{
+    font-size: 1.38rem;
+    margin-left: 6px;
+    cursor: default;
 }
 
-.done{
+.buttons{
     background-color: aliceblue;
-    margin: 3px;
+    margin: 5px;
     border: none;
     border-radius: 3px;
 }
 
-.done:hover{
+.buttons:hover{
     background-color: white;
     cursor: pointer;
     border-radius: 5px;

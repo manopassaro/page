@@ -17,6 +17,11 @@ export function Page () {
     }, []);
 
 
+    const [task, setTask] = useState({
+        task_id: "",
+    });
+
+
 
     const [newList, setNewList] = useState({ });
 
@@ -36,11 +41,23 @@ export function Page () {
         setNewList({});
     };
 
+    async function deletedTask(id) {
+        const response = services.deleteById(id);
+        console.log(id);
+        window.location.reload(true);
+        console.log(id);
+    }
+
+    const deleteTask = (e) => {
+        setTask({ task_id: e.target.id });
+        deletedTask(task.task_id);
+        console.log(e.target.id)
+    }
 
 
     return (
         <div id="tool">
-        <h1>Lista de afazeres</h1>
+        <h1 id="title">Lista de afazeres</h1>
         
         <div className="create">
         <input 
@@ -57,15 +74,25 @@ export function Page () {
         </div>
 
         {all.map((task, index) => (
-            <div className="tasks" key={index}>  
-                <h3 className="card">{task.task}</h3>
-                <button
-                className="done"
-                id={task.id}
-                ><span class="material-symbols-outlined">
-                    done
-                </span>
+            <div className="cards" key={index}>  
+                <h3 className="task">{task.task}</h3>
+                <div>
+                    <button
+                    className="buttons"
+                    ><span class="material-symbols-outlined">
+                        edit
+                    </span>    
+                    </button>
+                    
+                    <button
+                    className="buttons"
+                    id={task.id}
+                    onClick={deleteTask}
+                    ><span class="material-symbols-outlined">
+                        done
+                    </span>
                 </button>
+                </div>
             </div>
             )    
         )}
