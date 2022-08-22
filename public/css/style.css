@@ -38,7 +38,7 @@ body{
 }
 
 #input{
-    width: 50rem;
+    width: 40rem;
     margin-right: 5px;
 
 }
@@ -68,7 +68,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 50rem;
+    width: 40rem;
     margin: 7px;
     border-radius: 4px;
 }
