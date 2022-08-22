@@ -41,18 +41,14 @@ export function Page () {
         setNewList({});
     };
 
-    async function deletedTask(id) {
-        const response = services.deleteById(id);
-        console.log(id);
+
+
+
+    async function deleteTask(id) {
+        const response = await services.deleteById(id);
         window.location.reload(true);
-        console.log(id);
     }
 
-    const deleteTask = (e) => {
-        setTask({ task_id: e.target.id });
-        deletedTask(task.task_id);
-        console.log(e.target.id)
-    }
 
 
     return (
@@ -79,7 +75,7 @@ export function Page () {
                 <div>
                     <button
                     className="buttons"
-                    ><span class="material-symbols-outlined">
+                    ><span className="material-symbols-outlined">
                         edit
                     </span>    
                     </button>
@@ -87,8 +83,8 @@ export function Page () {
                     <button
                     className="buttons"
                     id={task.id}
-                    onClick={deleteTask}
-                    ><span class="material-symbols-outlined">
+                    onClick={() => deleteTask(task.id)}
+                    ><span className="material-symbols-outlined">
                         done
                     </span>
                 </button>

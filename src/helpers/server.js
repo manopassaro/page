@@ -13,5 +13,12 @@ export const services = {
         mode: 'cors',
         body: JSON.stringify(task),
     }).then(parseResponse),
+    updateById: (id, editedTask) => fetch(`${server}/${id}`, {method: 'PUT',
+        headers:{
+            'Content-Type': 'application/json',
+        },
+        mode: 'cors',
+        body: JSON.stringify(editedTask),
+    }).then(parseResponse),
     deleteById: (id) => fetch(`${server}/${id}`, {method: "DELETE"}).then(parseResponse),
 }
